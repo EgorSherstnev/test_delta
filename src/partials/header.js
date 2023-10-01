@@ -4,15 +4,11 @@ import MailLogo from "../pics/Mail.jpg"
 import PhoneLogo from "../pics/Phone.jpg"
 import { getImages } from "../http/imagesAPI";
 
-const Header = ({getImagesList}) => {
-    const click = () => {
-        getImagesList();
-    }
+const Header = () => {
 
     return (
         <div 
             className="header-container header"
-            onClick={click}
         >
            <div className="header-content">
             <div className="left__wifi">

@@ -93,12 +93,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .image-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 0 10px;
-  grid-auto-rows: 10px;
+  display:flex;
+  /*display: grid;*/
+  /*grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));*/
+  /*grid-gap: 0 10px;*/
+  /*grid-auto-rows: 10px;*/
 }
 
 .image-list img {
   width: 250px;
+}
+.image-detailcard{
+  display: flex;
+  flex-direction: column;
+}
+.image-detail {
+  width: auto;
+  height: 50vh;
 }

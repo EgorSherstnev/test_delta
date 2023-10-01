@@ -1,35 +1,47 @@
-import React, {useState} from "react";
-
+import React, {useEffect, useState} from "react";
+import { 
+    Routes,
+    Route,
+} from "react-router-dom";
 import "../css/style.css"
 import Header from "../partials/header";
 import { getImages } from "../http/imagesAPI";
 import ImageList from "../partials/ImageList";
+import ImageDetailPage from "../pages/ImageDetailPage";
 
 
 const App = () => {
 
     const [images, setImages] = useState([]);
 
-    const getImagesList = async(e) => {
-            //e.preventDefault();
-            try {
-                let data = await getImages()
-                console.log(data)
-                setImages(data)
+    useEffect(() => {
+        const fetchImages = async () => {
+          try {
+            let data = await getImages();
+            console.log(data);
+            setImages(data);
+          } catch (e) {
+            alert(e.response.data.message);
+          }
+        };
     
-            } catch (e) {
-                alert(e.response.data.message)
-            }
-        }
+        fetchImages();
+      }, []);
     
 
     return(
-        <div className="wrapper ">
-            <div className="container">
-                <Header getImagesList={getImagesList}/>
-                <ImageList images={images} />
-            </div>
-        </div>
+        <Routes>
+            <Route exact path="/" element={
+                <div className="wrapper ">
+                    <div className="container">
+                        <Header />
+                        <ImageList images={images} />
+                    </div>
+                </div>} 
+            />
+            <Route path="/image/:id" element={<ImageDetailPage />} />
+        </Routes>
+        
     );
 };
 

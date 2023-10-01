@@ -48,7 +48,7 @@ const ImageDetailPage = () => {
    }
 
    return (
-      <section className='task-details__container container'>
+      <section className='image-details__container container'>
          <div className='image-detailcard'>
             <div >
                <img 
@@ -57,11 +57,11 @@ const ImageDetailPage = () => {
                   src={image.largeImage}
                />
             </div>
-            <div>
+            <div className='comments'>
                {commentsList.map((comment) => (
                   <div key={comment.id}>
-                     <div>{comment.author}</div>
-                     <div>{comment.text}</div>
+                     <div className='comment-author'>{comment.author}</div>
+                     <div className='comment-text'>{comment.text}</div>
                   </div>
                ))}
             </div>
@@ -74,18 +74,21 @@ const ImageDetailPage = () => {
                   onChange={(e) => setNewComment(e.target.value)}
                />
             </div>
-            <button 
-               className='comment__button button'
-               onClick={handleAddComment}
-            >
-                  Add comment
-            </button>
-            <button 
-               className='homepage__button button'
-               onClick={toHomePage}
-            >
-                  MAIN PAGE
-            </button>
+            <div className='buttons-comment'>
+               <button 
+                  className='comment__button button'
+                  onClick={handleAddComment}
+               >
+                     Add comment
+               </button>
+               <button 
+                  className='homepage__button button'
+                  onClick={toHomePage}
+               >
+                     MAIN PAGE
+               </button>
+            </div>
+               
       </div>
       </section>
    );

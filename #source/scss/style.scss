@@ -1,0 +1,176 @@
+@import 'nullstyle';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Helvetica&display=swap');
+
+$font_listbar: Arial, Helvetica, sans-serif;
+$font_button: 'Open Sans';
+
+body {
+    color: aliceblue;
+}
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    max-width: 1358px;
+    /*padding: 0px 15px;
+    //margin: 0px auto;
+    //box-sizing: content-box;*/
+}
+  
+  /*----header----------------*/
+.header {
+    display: flex;
+    background-repeat: no-repeat;
+    min-height: 29vh;
+    background-image: url('../pics/Banner\ image.jpg');
+    position: relative;
+    margin-bottom: 3rem;
+    .header-content {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        width: 1024px;
+        padding: 0px 32px;
+        align-items: flex-end;
+        gap: 20px;
+        .header-avatar{
+            border-radius: 64px;
+            box-shadow: 0px 0px 0px 4px #FFF;
+            margin-right: 20px;
+        }
+        .header-info{
+            display: flex;
+            margin-bottom: 4px;
+            flex-grow: 1;
+            .header-username{
+                color: var(--gray-900, #111827);
+                font-family: Inter;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 32px;
+                margin-right: 24px;
+                flex-grow: 1;
+            }
+            .header-buttons{
+                display: flex;
+                :not(:last-child) {
+                    margin-right: 16px;
+                }
+                .header-button{
+                    display: flex;
+                    padding: 9px 17px 9px 13px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 8px;
+                    border-radius: 6px;
+                    border: 1px solid var(--gray-300, #D1D5DB);
+                    background: var(--white, #FFF);
+                    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+                    span{
+                        color: var(--gray-700, #374151);
+
+                        /* text-sm/leading-5/font-medium */
+                        font-family: Inter;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 20px; /* 142.857% */
+                    }
+                }
+            }
+        }
+    }
+}
+
+  
+
+.image-list__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 2rem; 
+}
+
+.image-card {
+    display: flex;
+    height: 29vh;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1 0 0;
+    .image-card__image{
+        width: 31.5vw;
+        height: 25vh;
+        flex: 1 0 0;
+        border-radius: 8px;
+        vertical-align: middle;
+        object-fit: cover;
+    }
+}
+
+.image-details__container {
+    max-width: 75%;
+    margin: auto;
+    .image-detailcard{
+        .comments{
+            display: flex;
+            flex-direction: column;
+            margin: 2rem;
+            .comment-author{
+                color: black;
+                margin: 2rem;
+            }
+            .comment-text{
+                color: black;
+                margin: 2rem;
+            }
+        }
+    }
+}
+
+.image-detailcard{
+    display: flex;
+    flex-direction: column;
+}
+.image-detail {
+    width: auto;
+    height: 50vh;
+}
+
+.input{
+    //width: 100%;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin-bottom: 2rem;
+}
+
+.buttons-comment{
+    display: flex;
+    :not(:last-child) {
+        margin-right: 1rem;
+    }
+}
+.button {
+    font-family: $font_button;
+    width: 150px;
+    background-color: rgb(80, 83, 202);
+    color: inherit;
+    border: 2px solid rgb(66, 177, 210);
+    border-radius: 5px;
+    padding: 5px;
+    &:hover {
+        background-color: rgb(23, 123, 118);
+    }
+}
